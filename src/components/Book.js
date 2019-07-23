@@ -1,12 +1,19 @@
 import React from "react";
 
-const Book = props => {
+class Book extends React.Component {
+
+  handleClick = (e) => {
+    this.props.onBookClick(e)
+  }
+
+  render() {
+
   return (
-    <div>
-      <h2>{/*book title*/}</h2>
-      {/*book img*/}
+    <div className="book">
+      <h2>{this.props.title}</h2>
+      <img src={this.props.img} alt="oh no" id={this.props.id ? this.props.id : "temp"} onClick={this.handleClick}/>
     </div>
-  );
+  )}
 };
 
 export default Book;
