@@ -1,12 +1,24 @@
-import React from "react";
+import React from 'react'
+import PropTypes from 'prop-types'
 
-const Book = props => {
-  return (
-    <div>
-      <h2>{/*book title*/}</h2>
-      {/*book img*/}
-    </div>
-  );
-};
+class Book extends React.Component {
+
+  state = {
+    clicked: false
+  }
+
+  handleClick = (e) => {
+    console.log(e.target);
+  }
+
+  render () {
+    return (
+      <div onClick={this.handleClick} >
+        <h2>{this.props.title}</h2>
+        <img src={this.props.img} alt={this.props.title}></img>
+      </div>
+    );
+  }
+}
 
 export default Book;
