@@ -5,7 +5,10 @@ const Bookshelf = props => {
   return (
     <div>
       <h1>Book Shelf</h1>
-      <ul>{/*render list of books here*/}</ul>
+      <ul>{props.chosenBooks.map(bookObj => {
+        return <Book handleClick={props.handleClick} book={bookObj}/>
+      })}
+      </ul>
     </div>
   );
 };
