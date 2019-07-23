@@ -6,7 +6,8 @@ const Bookshelf = props => {
 
   function renderBookShelf(props) {
     let booksForShelf = props.bookShelf.map((book, idx) => {
-        return <Book data={book} key={book.id} addBookToShelf={props.addBookToShelf}/>
+        // debugger
+        return <Book data={book} key={idx} addBookToShelf={props.addBookToShelf} removeFromShelf={props.removeFromShelf}/>
       })
       // debugger
       return booksForShelf

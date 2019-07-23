@@ -8,8 +8,13 @@ const Book = props => {
       author: e.target.parentElement.id,
       img: e.target.src
     }
-    // debugger
-    props.addBookToShelf(book)
+    let container = e.target.parentElement.parentElement.parentElement.firstChild.innerText
+    if(container === "Book Shelf") {
+      // debugger
+      props.removeFromShelf(book)
+    } else {
+      props.addBookToShelf(book)
+    }
   }
 
   return (
