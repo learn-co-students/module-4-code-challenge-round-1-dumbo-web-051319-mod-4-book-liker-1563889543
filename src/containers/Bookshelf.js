@@ -5,7 +5,7 @@ const Bookshelf = props => {
   return (
     <div>
       <h1>Book Shelf</h1>
-      <ul>{/*render list of books here*/}</ul>
+      <ul>{props.booksOnShelf.map(book => <li key={book.id}><Book {...book} clickHandler={props.removeFromShelf}/></li>)}</ul>
     </div>
   );
 };
